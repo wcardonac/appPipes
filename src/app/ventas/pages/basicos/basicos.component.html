@@ -1,0 +1,90 @@
+<div class="text-layout">
+    <h1>Pipes basicos</h1>
+    <p>
+        Pipes incluidos en angular -Usualmente estan en en common Module
+    </p>
+
+</div>
+
+<!-- <div class="grid">
+    <div class="col-4 md:col-6 lg:col-3">B</div>
+    <div class="col-4 md:col-6 lg:col-3">C</div>
+    <div class="col-4 md:col-6 lg:col-3">D</div>
+</div> -->
+
+<div class="grid">
+    <div class="col-4">
+        <!-- en esta clase vamos a usar el uppercase el lowercase y el tittlecase
+        con las [] le pasamos el valor de la propiedad que tenemos en el .ts -->
+        <p-card header="lowercase-pasamos a minusculas"
+                [subheader]="nombreLower">
+                {{nombreLower | lowercase}}
+        </p-card>
+    </div>
+    <div class="col-4">
+        <p-card header="uppercase-pasamos a mayusculas"
+                [subheader]="nombreUper">
+                {{nombreUper | uppercase}}
+        </p-card>
+        
+    </div>
+    <div class="col-4">
+        <!-- recuerda que los pipes no modifican la data solo la trasforman para que se vea como 
+        yo quiero -->
+        <p-card header="titlecase-se organiza las palabras"
+                [subheader]="nombreCompleto">
+                {{nombreCompleto | titlecase }}
+        </p-card>
+       
+    </div>
+</div>
+
+<div class="text-layout">
+    <h1>Date | Fecha | Pipe </h1>
+    <p>
+        Pipes para mostrar las fechas
+    </p>
+</div>
+
+<div class="grid">
+    <div class="col-6">
+        <p-card>
+            <ul>
+                <li>fecha</li>
+                <li>fecha | con pipe date</li>
+                <li>fecha | date:'short'-pipe</li>
+                <li>fecha | date:'mes completo'-pipe</li>
+                <li>fecha | date:'mes completo'-pipe</li>
+                <li>fecha | date:'mes dia año'-pipe</li>
+            </ul>
+
+            <hr>
+            <ul>
+                <li>fecha | date:'long':'GMT-6'</li>
+                <li>fecha | date:'long':'GMT-5'</li>
+                <li>fecha | date:'long':'GMT-6':'fr' coambio de idioma a frances</li>
+            </ul>
+
+        </p-card>
+    </div>
+    <div class="col-6">
+        <p-card>
+            <ul>
+                <li>{{fecha}}</li>
+                <li>{{fecha | date}}</li>
+                <li>{{fecha | date:'short'}}</li>
+                <li>{{fecha | date:'long'}}</li>
+                <li>{{fecha | date:'MMMM'}}</li>
+                <li>{{fecha | date:'MMMM d,yyy'}}</li>
+            </ul>
+            <hr>
+            <ul>
+                <li>{{fecha | date:'long':'GMT-6'}}</li>
+                <li>{{fecha | date:'long':'GMT-4'}}</li>
+                <li>{{fecha | date:'long':'GMT-6':'fr'}}</li>
+            </ul>
+        </p-card>
+        
+    </div>
+</div>
+
